@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
-export default function ManifestoList() {
+function ManifestoList() {
   const [manifestos, setManifestos] = useState([]);
 
   useEffect(() => {
-    fetch("/manifestos.json")
-      .then(res => res.json())
-      .then(data => setManifestos(data));
+    fetch('/manifestos.json')
+      .then((res) => res.json())
+      .then((data) => setManifestos(data));
   }, []);
 
   return (
@@ -23,3 +23,5 @@ export default function ManifestoList() {
     </div>
   );
 }
+
+export default ManifestoList;

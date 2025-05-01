@@ -1,16 +1,16 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
-export default function ManifestoPage() {
+function ManifestoPage() {
   const { id } = useParams();
   const [manifestos, setManifestos] = useState([]);
   const navigate = useNavigate();
   const idx = parseInt(id);
 
   useEffect(() => {
-    fetch("/manifestos.json")
-      .then(res => res.json())
-      .then(data => setManifestos(data));
+    fetch('/manifestos.json')
+      .then((res) => res.json())
+      .then((data) => setManifestos(data));
   }, []);
 
   const manifesto = manifestos.find((m) => m.id === idx);
@@ -26,7 +26,7 @@ export default function ManifestoPage() {
         {idx > 1 && (
           <Link to={`/manifesto/${idx - 1}`}>← 이전</Link>
         )}
-        {" "}
+        {' '}
         {idx < manifestos.length && (
           <Link to={`/manifesto/${idx + 1}`}>다음 →</Link>
         )}
@@ -36,3 +36,5 @@ export default function ManifestoPage() {
     </div>
   );
 }
+
+export default ManifestoPage;
