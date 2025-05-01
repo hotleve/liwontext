@@ -1,4 +1,4 @@
-fetch('public/declarations.json')
+fetch('./public/declarations.json')
   .then(response => response.json())
   .then(data => {
     const list = document.getElementById('declaration-list');
