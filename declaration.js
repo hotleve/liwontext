@@ -1,7 +1,7 @@
 const params = new URLSearchParams(window.location.search);
 const id = parseInt(params.get('id'));
 
-fetch('public/declarations.json')
+fetch('declarations.json')
   .then(res => res.json())
   .then(data => {
     const declaration = data[id];
