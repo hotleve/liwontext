@@ -24,7 +24,7 @@ body {
   
   a {
     text-decoration: none;
-    color: #007bff;
+    color: black;
   }
   
   a:hover {
@@ -35,8 +35,6 @@ body {
     margin: 10px 5px;
     padding: 8px 12px;
     font-size: 1em;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
     cursor: pointer;
   }
   
