@@ -4,7 +4,7 @@ const id = parseInt(params.get('id'));
 fetch('declarations.json')
   .then(res => res.json())
   .then(data => {
-    const declaration = data[id];
+    const declaration = data[id-1];
     if (!declaration) return;
 
     document.getElementById('title').textContent = declaration.title;
